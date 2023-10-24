@@ -11,7 +11,6 @@ driver = webdriver.Chrome()
 driver.get("https://cemantix.certitudes.org/pedantix")
 
 
-
 def brute_force_search(path, word_lenght) :
 
     search_bar = driver.find_element(By.ID, "pedantix-guess")
@@ -27,10 +26,6 @@ def brute_force_search(path, word_lenght) :
                 search_bar.send_keys(word)
                 search_bar.send_keys(Keys.RETURN)
                 time.sleep(0.03)
-
-                if "Mot trouvé" in driver.page_source:
-                    print("Mot trouvé :", word)
-                    break
 
     driver.quit()
 
